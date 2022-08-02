@@ -28,13 +28,15 @@ public class DispatchServlet extends HttpServlet {
 
                     case "/usr/article/detail":
                         articleController.showDetail(rq);
+                    case "/usr/article/delete":
+                        articleController.doDelete(rq);
+                        break;
                 }
                 break;
             case "POST":
                 switch(rq.getActionPath()) {
                     case "/usr/article/write":
                         articleController.doWrite(rq);
-                        break;
                 }
                 break;
 

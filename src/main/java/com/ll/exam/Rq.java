@@ -59,16 +59,16 @@ public class Rq {
         if(msg != null && msg.trim().length() > 0) {
            appendBodyln("""
                    <script>
-                   alert(msg);
+                   alert("%s");
                    </script>
-                   """);
+                   """.formatted(msg));
         }
 
         appendBodyln("""
                 <script>
-                location.replace(uri);
+                location.replace("%s");
                 </script>
-                """);
+                """.formatted(uri));
     }
 
     public void appendBodyln(String msg) {
