@@ -107,4 +107,20 @@ public class Rq {
             return defaultValue;
         }
     }
+
+    public void historyBack(String msg) {
+        if(msg != null && msg.trim().length() > 0) {
+            appendBodyln("""
+                <script>
+                alert("%s");
+                </script>
+                """.formatted(msg));
+        }
+        appendBodyln("""
+                <script>
+                    history.back();
+                </script>
+                """);
+
+    }
 }
