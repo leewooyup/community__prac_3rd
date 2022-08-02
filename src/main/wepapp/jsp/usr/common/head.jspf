@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+
+<!-- 모바일에서 디자인이 축소되지 않게 하기 위한 코드 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
+<!-- 테일윈드 불러오기 -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- 공통 CSS -->
+<style>
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html > body {
+    font-family: 'GmarketSansMedium';
+}
+</style>
+</head>
+
+<body>
+
+<section>
+    <div class="container flex mx-auto px-3 mt-5">
+        <div class="mr-auto">
+            <span class="font-bold text-lg">로고</span>
+        </div>
+        <div class="flex">
+            <a class="mr-3 font-bold text-lg hover:underline hover:text-[red] cursor-pointer" href="/usr/article/write">자유게시판 작성</a>
+            <a class="font-bold text-lg hover:underline hover:text-[red] cursor-pointer" href="/usr/article/list/free">자유게시판 목록</a>
+        </div>
+    </div>
+</section>
