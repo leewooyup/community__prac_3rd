@@ -12,7 +12,7 @@
             <a class="w-[40px]" href="#">${article.id}</a>
             <a class="flex-grow hover:underline hover:text-[red]" href="/usr/article/detail/free/${article.id}">${article.title}</a>
             <a class="hover:underline hover:text-[red] mr-3" href="/usr/article/delete/free/${article.id}">삭제</a>
-            <a class="hover:underline hover:text-[red]" href="#">수정</a>
+            <a class="hover:underline hover:text-[red]" href="/usr/article/modify/free/${article.id}">수정</a>
         </li>
         </c:forEach>
         </ul>
