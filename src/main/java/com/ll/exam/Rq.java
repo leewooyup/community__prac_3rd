@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
+import java.util.Locale;
 
 public class Rq {
     private final HttpServletRequest req;
@@ -122,5 +123,15 @@ public class Rq {
                 </script>
                 """);
 
+    }
+
+    public String getRouteMethod() {
+        String method = getParam("_method", "");
+
+        if(method.length() > 0) {
+            return method.toUpperCase();
+        }
+
+        return req.getMethod();
     }
 }

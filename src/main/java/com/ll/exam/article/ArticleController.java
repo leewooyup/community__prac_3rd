@@ -19,6 +19,17 @@ public class ArticleController {
     public void doWrite(Rq rq) {
         String title = rq.getParam("title", "");
         String body = rq.getParam("body","");
+
+        if(title.length() == 0) {
+            rq.historyBack("제목을 입력해주세요.");
+            return;
+        }
+
+        if(body.length() == 0) {
+            rq.historyBack("내용을 입력해주세요.");
+            return;
+        }
+
         long id = articleService.write(title, body);
 
         rq.replace("/usr/article/list/free", "%d번 게시물이 작성되었습니다".formatted(id));
