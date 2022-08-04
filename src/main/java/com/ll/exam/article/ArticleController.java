@@ -112,4 +112,9 @@ public class ArticleController {
 
         rq.replace("/usr/article/detail/free/%d".formatted(id), "%d번 글이 수정되었습니다.".formatted(id));
     }
+
+    public void getArticles(Rq rq) {
+        List<ArticleDto> articleDtos = articleService.findAll();
+        rq.successJson(articleDtos);
+    }
 }

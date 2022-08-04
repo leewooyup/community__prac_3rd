@@ -1,13 +1,10 @@
 package com.ll.exam;
 
 import com.ll.exam.article.ArticleController;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import java.io.IOException;
 
 @WebServlet("/usr/*")
 public class DispatchServlet extends HttpServlet {
@@ -25,6 +22,9 @@ public class DispatchServlet extends HttpServlet {
                         break;
                     case "/usr/article/list":
                         articleController.showList(rq);
+                        break;
+                    case "/usr/article/getArticles":
+                        articleController.getArticles(rq);
                         break;
                     case "/usr/article/detail":
                         articleController.showDetail(rq);
@@ -48,7 +48,7 @@ public class DispatchServlet extends HttpServlet {
                 switch(rq.getActionPath()) {
                     case "/usr/article/delete":
                         articleController.doDelete(rq);
-                        break
+                        break;
                 }
 
         }
