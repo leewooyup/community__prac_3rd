@@ -54,6 +54,18 @@ public class Rq {
         return value;
     }
 
+    public long getLongParam(String paramName, long defaultValue) {
+        String value = req.getParameter(paramName);
+        if(value == null) {
+            return defaultValue;
+        }
+
+        try {
+            return Long.parseLong(value);
+        } catch(NumberFormatException e) {
+            return defaultValue;
+        }
+    }
     public void replace(String uri, String msg) {
         if(msg != null && msg.trim().length() > 0) {
            appendBodyln("""
